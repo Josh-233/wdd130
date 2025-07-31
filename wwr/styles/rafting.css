@@ -24,6 +24,7 @@ body {
 h1, h2 {
   font-family: var(--heading-font);
   color:#f4a261;
+  font-size: 1.5rem;
 }
 
 
@@ -46,6 +47,7 @@ header {
   align-items: center;
   padding: 1rem;
   background-color:#333;
+  
   color: white;
 }
 
@@ -65,7 +67,9 @@ nav a {
   font-weight: bold;
 }
 
-
+nav a:hover {
+  color: var(--secondary-color);
+}
 
 .hero {
   position: relative;
@@ -99,6 +103,7 @@ nav a {
   max-width: 400px;
   z-index: 1;
 }
+
 .center-section {
   text-align: center;
   margin: 2rem auto;
@@ -158,11 +163,13 @@ footer .socialmedia {
   display: flex;
   justify-content: flex-end;
   margin-top: 1%;
-  gap: 10px;
+  text-align: center;
+  gap: 10px 0.5rem;
+  flex-direction: column;
 }
 
 
- footer {
+footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,6 +177,7 @@ footer .socialmedia {
   background: #333;
   color: white;
 }
+
 .wireframe-link {
   display: inline-block;
   margin-top: 1rem;
@@ -186,6 +194,7 @@ footer .socialmedia {
 .wireframe-link:hover {
   background-color: #f4a261;
   color: white;
+
 }
 
 
@@ -223,6 +232,13 @@ textarea {
   border-radius: 4px;
 }
 
+input:focus,
+textarea:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 3px var(--secondary-color);
+}
+
 textarea {
   resize: vertical;
 }
@@ -245,13 +261,14 @@ fieldset {
 .submit-button:hover {
   background-color: #333;
 }
+
 .employee-gallery {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 1rem;
-  
+
 }
 
 .employee-gallery figure {
@@ -263,8 +280,9 @@ fieldset {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  
+
 }
+
 .map-container {
   position: relative;
   padding-bottom: 56.25%; 
@@ -281,4 +299,21 @@ fieldset {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+@media (max-width: 600px) {
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+
+  .center-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 600px) {
+  footer .socialmedia {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 }
